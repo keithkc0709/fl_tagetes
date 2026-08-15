@@ -1,0 +1,34 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+
+# Replit
+.upm/
+.config/
+.cache/
+.breakpoints
+
+# Android signing — never commit these
+android/key.properties
+*.jks
+*.keystore
+android/.gradle/
+android/local.properties
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Generated.xcconfig
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

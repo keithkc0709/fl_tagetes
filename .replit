@@ -1,0 +1,27 @@
+run = "bash scripts/replit_run.sh"
+entrypoint = "lib/main.dart"
+
+# Flutter comes from replit.nix, not from a Replit language module.
+[nix]
+channel = "stable-24_05"
+
+[env]
+# Keep the pub cache inside the repl so it survives restarts and does not try
+# to write to the read-only Nix store.
+PUB_CACHE = "/home/runner/${REPL_SLUG}/.pub-cache"
+# Flutter refuses to run as root without this in some container images.
+FLUTTER_SUPPRESS_ANALYTICS = "true"
+PORT = "8080"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
+
+[unitTest]
+language = "dart"
+
+[deployment]
+run = ["bash", "scripts/replit_run.sh"]
+build = ["bash", "scripts/replit_build.sh"]
+deploymentTarget = "static"
+publicDir = "build/web"

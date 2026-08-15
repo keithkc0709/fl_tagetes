@@ -1,0 +1,30 @@
+name: flowline
+description: >-
+  FLOWLINE — a one-thumb endless timing game where your vertical scroll is the
+  simulation clock.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: '>=3.19.0'
+
+# Dependency policy: the gameplay loop, rendering, physics-style motion and
+# rewind system are all implemented directly on Flutter's own scheduler and
+# canvas. The only runtime dependency is local key/value storage. Fewer
+# dependencies means fewer version-compatibility surprises and a smaller,
+# faster-launching binary.
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/audio/
